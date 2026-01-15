@@ -1,0 +1,22 @@
+SOL 101
+CEND
+ECHO=NONE
+  DISPLACEMENT = ALL
+  STRESS=ALL
+  SPCFORCES=ALL
+SUBCASE       1
+  SUBTITLE  = 1000N
+  SPC =        100
+  LOAD =       200
+BEGIN BULK
+PARAM,AUTOSPC,NO      
+PARAM,MAXRATIO,1.0+8   
+PARAM,POST,-1  
+PARAM, GRDPNT, 0
+$
+include 'include\insert your file name here.bdf'
+$
+SPCADD,100,1
+LOAD,200,1.0,1.0,2 {FORCE CARD is used when force applied in linear Analysis}
+$
+ENDDATA
